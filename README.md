@@ -6,28 +6,28 @@ clean install / clean deploy
 
 # 上报方式
 ## 1.HTTP日志上报（Controller日志）
-描述：  
+**描述：**  
 &emsp;基于切面的方式，监控业务代码“请求/返回”JSON日志  
 &emsp;根据返回JSON对象的返回字段、返回码  决定是否上报Controller日志  
 &emsp;默认返回字段“status”（支持配置）  
 &emsp;默认返回码“all”  全部上报（支持配置）  
 
-接入方式：  
+**接入方式：**  
 （1）基于配置  
 &emsp;引入配置文件 classpath:application-log.xml  
 （2）基于注解  
 &emsp;添加包扫描  cn.com.tvmore.logreport.monitor
 
-切入逻辑：  
+**切入逻辑：**  
 &emsp;切入所有被@RequestMapping 注解的方法（可自定义注解用于切入）
 
 ## 2.主动日志上报
-描述：  
+**描述：**  
 &emsp;业务系统可根据情况，调用上报接口  
 &emsp;主动上报业务日志  
 &emsp;cn.com.tvmore.logreport.report.spi.Report
 
-接口类别：  
+**接口类别：**  
 （1）上报普通信息日志 Report.info  
 &emsp;Report.info(String code, String msg)  
 &emsp;Report.info(String appName, String code, String msg)  
@@ -46,9 +46,9 @@ clean install / clean deploy
 &emsp;appName:业务系统名；t:异常对象  
   
 # 配置文件
-业务系统需要新增配置文件  log-report.properties
+***业务系统需要新增配置文件  log-report.properties
 
-内容：  
+**内容：**  
 &emsp;log.report.app-name= #上报日志的业务系统名  
 &emsp;log.report.app-domain= #业务系统域名  
 
