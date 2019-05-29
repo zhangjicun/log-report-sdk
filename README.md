@@ -46,7 +46,7 @@ clean install / clean deploy
 &emsp;appName:业务系统名；t:异常对象  
   
 # 配置文件
-***业务系统需要新增配置文件  log-report.properties
+****业务系统需要新增配置文件  log-report.properties
 
 **内容：**  
 &emsp;log.report.app-name= #上报日志的业务系统名  
